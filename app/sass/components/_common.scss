@@ -1,0 +1,436 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	min-width: 320px;
+	font-size: 16px;
+	background-color: $color-1;
+	color: $color-2;
+	transition: 0.5s;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $color-1;
+	z-index: -1;
+	opacity: 0.6;
+}
+
+.item-title {
+	color: $color-3;
+}
+
+.item-descr {
+	font-size: 0.9em;
+	color: $color-4;
+	line-height: 1.5em;
+}
+
+.btns {
+	position: relative;
+	text-transform: uppercase;
+	color: $color-1;
+	padding: 1em 2em 1em 2.5em;
+	background-color: $basic;
+	border: none;
+}
+
+/*----------------------------------------------------------------------------------------
+|                              HEADER START                                               |
+-----------------------------------------------------------------------------------------*/
+header {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	min-height: 4em;	
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	border-bottom: 10px solid $basic;
+	background-color: $color-1;
+	z-index: 50;
+}
+
+nav {
+	width: 80%;	
+}
+
+.menu {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.menu__item {
+	display: inline-block;
+	text-align:  center;
+
+	a {
+		display: block;
+		height: 100%;
+		width: 6em;
+		height: 4em;
+		padding: 1.4em 1em;
+		color: $basic;
+		text-decoration: none;
+		transition: 0.5s;
+
+		&:hover {
+			font-weight: 600;
+			transition: 0.5s;
+		}
+	}
+}
+
+.mob-trigger {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 6em;
+	height: 100%;
+	cursor: pointer;
+
+	span,
+	span:before,
+	span:after {
+		display: block;
+		position: relative;
+		width: 2.5em;
+		height: 4px;
+		background-color: $basic;
+		border-radius: 3px;
+	}
+
+	span:before,
+	span:after {
+		content: '';
+		position: absolute;
+		top: -8px;		
+	}
+
+	span:after {
+		top: 8px;
+	}
+}
+
+/*----------------------------------------------------------------------------------------
+|                              HEADER END                                                 |
+-----------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------
+|                              FOOTER START                                               |
+-----------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------
+|                              FOOTER END                                                 |
+-----------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------
+|                              CONTENT SECTION START                                        |
+-----------------------------------------------------------------------------------------*/
+.advertising {
+	width: 100%;
+	height: 4em;
+	background-color: $basic;
+	color: $color-1;
+	text-align: center;
+	font-size: 2em;
+	line-height: 4em;
+	vertical-align: middle;
+}
+
+.top-sec {
+	width: 100%;
+	height: 100vh;
+	background-image: url('../img/bg-1.jpg');
+	background-repeat: no-repeat;
+	background-position-Y: 20%;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	position: relative;
+	width: 800px;
+	height: 600px;
+	padding: 52px 40px;
+	background-color: $color-1;
+	color: $color-2;
+	font-size: 0;
+}
+
+.slider-wpr {
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+}
+
+.slider-card {
+	padding-left: 0;
+
+	.slick-dots {
+	    bottom: -88px;
+	}
+
+	.slick-dots li button:before {
+		content: '';
+	    width: 18px;
+		height: 3px;
+		background-color: $basic;
+		opacity: 0.45;
+	}
+
+	.slick-dots li.slick-active button:before {
+		opacity: 1;
+	}
+
+	.slick-prev, .slick-next {
+	    top: 107%;
+	    left: 35%;
+	}
+
+	.slick-next {
+		left: 58.5%;
+	}
+
+	.slick-prev:before, .slick-next:before {
+	    font-family: 'slick';
+	    font-size: 20px;
+	    line-height: 1;
+	    opacity: .75;
+	    color: $basic;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	}
+}
+
+.slider-card__item {
+	width: 240px;
+	height: 400px;
+}
+
+.img-wpr {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	z-index: 10;
+	
+	img {
+		height: 100%;
+		margin: auto;
+		z-index: 20;
+	}
+
+	&:before {
+		content: '';
+		position: relative;
+		top: 50%;
+		width: 100%;
+		height: 50em;
+		z-index: 20;
+	}
+}
+
+.card__descr {
+	display: inline-block;
+	position: relative;
+	width: 50%;
+	height: 100%;
+	padding: 1em;
+	font-size: 16px;
+	vertical-align: top;
+}
+
+.card__action {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1em;
+	width: 100%;
+}
+
+.btn-save,
+.btn-buy {
+	width: 50%;
+	outline: none;
+	cursor: pointer;
+	border-bottom: 5px solid transparent;
+	transition: 0.5s;
+
+	&:active {
+		opacity: 0.7;
+	}
+
+	&:before {
+		content: $icon-buy;
+		font-family: 'myicons';
+		font-size: 1em;
+		position: absolute;
+		left: 3em;
+	}
+}
+
+.btn-buy:hover {
+	border-color: #006d6d;
+	transition: 0.3s;
+}
+
+.btn-save {
+	background-color: #d9d9d9;
+
+	&:before {
+		content: $icon-save;
+	}
+
+	&:hover {
+		border-color: #898989;
+		transition: 0.3s;
+	}
+}
+
+.rating {
+	list-style: none;
+	padding-left: 0;
+}
+
+.rating__start {
+	display: inline-block;
+	cursor: pointer;
+	
+	&:before {
+		content: $icon-star;
+		font-family: 'myicons';
+		color: gold;
+	}
+}
+
+/*----------------------------------------------------------------------------------------
+|                              CONTENT SECTION END                                        |
+-----------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------
+|                                MEDIA START                                              |
+-----------------------------------------------------------------------------------------*/
+// 1440
+@include MQ(L) {
+	
+}
+
+// 1200
+@include MQ(ML) {
+	
+}
+
+// 992
+@include MQ(M) {
+	.card {
+		width: 80%;
+		height: 500px;
+		padding: 1.5em;
+	}
+
+	.img-wpr img {
+		z-index: 20;
+		height: 92%;
+	}
+	.top-sec {
+		height: 100%;
+		padding-bottom: 3em;
+	}
+}
+
+// 768
+@include MQ(SM) {
+	.mob-trigger {
+		display: flex;
+	}
+
+	nav {
+		transform: translateX(-100%);
+		position: absolute;
+		top: 0;
+		width: 70%;
+		height: 100vh;
+		background-color: $basic;
+		z-index: 20;
+	}
+
+	.menu {
+		list-style: none;
+		padding-left: 0;
+		margin: 0;
+	}
+
+	.menu__item {
+		display: block;
+		text-align: left;
+		border-right: none;
+		border-bottom: 1px solid $color-1;
+
+		a {			
+			width: 100%;
+			color: $color-1;			
+		}
+	}
+
+	.mob-trigger-close {
+		background-color: #00c7c7;
+		height: 4em;
+		z-index: 40;
+	}
+
+	body.menu-open {
+		transform: translateX(70%);
+		transition: 0.5s;
+
+		.overlay {
+			z-index: 20;
+			transition: 0.5s;
+		}
+	}
+
+	.card {
+		width: 80%;
+		height: auto;
+		padding: 1.5em;
+	}
+
+	.slider-wpr {
+		display: block;
+		width: 100%;
+	}
+
+	.card__descr {
+		display: block;
+		width: 100%;
+		padding-bottom: 5em;
+		margin-top: 3em;
+	}	
+}
+
+@media only screen and (max-width: 560px) {
+	
+} 
+
+// 480
+@include MQ(S) {
+	
+}
+
+// 320
+@include MQ(XS) {
+
+}
+/*----------------------------------------------------------------------------------------
+|                                MEDIA  END                                               |
+-----------------------------------------------------------------------------------------*/

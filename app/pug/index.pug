@@ -1,0 +1,52 @@
+doctype html
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+html(lang="en")
+
+	head
+		include modules/head.pug
+	body
+		.advertising advertising
+		.overlay
+		header
+			.mob-trigger
+				span
+			nav
+				- var menu = ["Menu 1", "Menu 2", "Menu 3", "Menu 4", "Menu 5"];
+				ul.menu
+					for menu__item in menu
+						li.menu__item
+							a(href="#")= menu__item
+
+		section.top-sec
+			.card
+				.slider-wpr
+					ul.slider-card
+						li.slider-card__item
+							.img-wpr
+								img(src="./img/slide-1.png")
+						li.slider-card__item
+							.img-wpr
+								img(src="./img/slide-2.png")
+						li.slider-card__item
+							.img-wpr
+								img(src="./img/slide-3.png")
+
+				.card__descr
+					h3.item-title Product title
+					- var stars = 5;
+					ul.rating
+						- for (var i=1; i<=stars; i++) {
+							li.rating__start
+						- }
+
+					p.item-descr Product description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, ab eaque dolore rem alias neque.
+					.card__action
+						button.btns.btn-save Save
+						button.btns.btn-buy Buy
+
+		footer
+
+		include modules/scripts.pug
