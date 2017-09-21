@@ -3,7 +3,7 @@ $(document).ready(function() {
   /*   toggle sidebar menu   */
 
   $(".mob-trigger").on("click", function() {
-    $("body").toggleClass('menu-open');
+    $("nav").toggleClass('menu-open');
     $(this).toggleClass('mob-trigger-close');
   });
 

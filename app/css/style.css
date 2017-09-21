@@ -580,11 +580,7 @@ body
 
     min-width: 320px;
 
-    -webkit-transition: .5s;
-         -o-transition: .5s;
-            transition: .5s; 
-
-    color: #333;
+    color: #333; 
     background-color: #fff;
 }
 
@@ -1061,10 +1057,6 @@ nav
         width: 100%;
         min-height: 4em;
 
-        -webkit-transform: translate(0, 4em);
-            -ms-transform: translate(0, 4em);
-                transform: translate(0, 4em);
-
         border-bottom: 10px solid #009f9f;
         background-color: #fff;
 
@@ -1083,16 +1075,26 @@ nav
         display: -webkit-flex;
         display: -ms-flexbox;
         display:         flex;
+
+        width: 65px;
+        height: 3.4em;
+
+        -webkit-transition: .5s;
+             -o-transition: .5s;
+                transition: .5s;
     }
     nav
     {
         position: absolute;
-        z-index: 20; 
+        z-index: 20;
         top: 0;
 
-        width: 70%;
+        width: 256px;
         height: 100vh;
 
+        -webkit-transition: .5s;
+             -o-transition: .5s;
+                transition: .5s; 
         -webkit-transform: translateX(-100%);
             -ms-transform: translateX(-100%);
                 transform: translateX(-100%);
@@ -1123,22 +1125,29 @@ nav
     }
     .mob-trigger-close
     {
-        z-index: 40; 
+        z-index: 40;
 
-        height: 4em;
+        height: 3.4em;
+
+        -webkit-transition: .5s;
+             -o-transition: .5s;
+                transition: .5s; 
+        -webkit-transform: translateX(255px);
+            -ms-transform: translateX(255px);
+                transform: translateX(255px);
 
         background-color: #00c7c7;
     }
-    body.menu-open
+    nav.menu-open
     {
         -webkit-transition: .5s;
              -o-transition: .5s;
                 transition: .5s; 
-        -webkit-transform: translateX(70%);
-            -ms-transform: translateX(70%);
-                transform: translateX(70%);
+        -webkit-transform: translateX(0%);
+            -ms-transform: translateX(0%);
+                transform: translateX(0%);
     }
-    body.menu-open .overlay
+    nav.menu-open body.overlay
     {
         z-index: 20;
 
