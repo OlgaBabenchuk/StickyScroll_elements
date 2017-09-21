@@ -424,7 +424,10 @@ nav {
 
 // 480
 @include MQ(S) {
-	
+	.btn-save:before,
+	.btn-buy:before {
+		left: 2em;
+	}
 }
 
 // 320
